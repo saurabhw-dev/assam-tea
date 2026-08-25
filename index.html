@@ -1172,7 +1172,7 @@
     }
 
     .proof-section {
-      background: #f6f3ec;
+      background: var(--cream);
       color: #1a1a14;
       padding: 100px 48px 90px;
       overflow: hidden;
@@ -1188,7 +1188,7 @@
       font-size: 0.72rem;
       letter-spacing: 0.28em;
       text-transform: uppercase;
-      color: #a97e2f;
+      color: var(--olive-dark, #a97e2f);
       margin-bottom: 18px;
       font-weight: 600;
     }
@@ -1214,26 +1214,28 @@
     }
 
     .proof-card {
-      background: #fffdf8;
+      background: var(--cream-2, #efe9d8);
+      /* slightly deeper cream so cards read against the section bg */
       padding: 36px 30px;
       position: relative;
-      box-shadow: 0 2px 14px rgba(26, 26, 20, 0.05);
       transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
     .proof-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 14px 30px rgba(26, 26, 20, 0.1);
+      box-shadow: 0 14px 30px rgba(26, 26, 20, 0.08);
     }
+
 
     .proof-card:not(:last-child) {
       border-right: 2px dotted rgba(169, 126, 47, 0.4);
     }
 
+
     .proof-num {
       display: block;
       font: 600 2rem var(--serif);
-      color: #a97e2f;
+      color: var(--olive-dark, #a97e2f);
       opacity: 0.6;
       margin-bottom: 18px;
     }
@@ -1249,10 +1251,11 @@
       font-size: 0.68rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #a97e2f;
+      color: var(--olive-dark, #a97e2f);
       margin-bottom: 14px;
       font-weight: 600;
     }
+
 
     .proof-card p:last-child {
       font-size: 0.87rem;
@@ -1268,7 +1271,7 @@
     .proof-footer p {
       font: 500 1.3rem var(--serif);
       font-style: italic;
-      color: #a97e2f;
+      color: var(--olive-dark, #a97e2f);
       letter-spacing: 0.02em;
     }
 
