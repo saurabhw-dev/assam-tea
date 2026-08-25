@@ -89,6 +89,148 @@
       }
     }
 
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background: #080a08;
+      display: grid;
+      place-items: center;
+      justify-items: center;
+      z-index: 9999;
+      transition: .8s;
+    }
+
+    .preloader.hide {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .loader-logo {
+      font: 600 58px var(--serif);
+      line-height: 1;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .loader-logo .word {
+      display: inline-block;
+      color: var(--cream);
+      opacity: 0;
+      transform: translateY(24px) scale(0.9);
+      animation: word-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .loader-logo .word:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .loader-logo .word:nth-child(2) {
+      animation-delay: 0.28s;
+    }
+
+    .loader-logo .word:nth-child(3) {
+      animation-delay: 0.46s;
+    }
+
+    .loader-logo .accent {
+      color: var(--green);
+      animation-name: word-in-glow;
+    }
+
+    .loader-sub {
+      margin-top: 10px;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #8f9288;
+      opacity: 0;
+      animation: fade-up 0.6s ease-out 0.75s forwards;
+    }
+
+    .loader-bar {
+      width: 220px;
+      height: 2px;
+      background: #292d27;
+      margin: 26px auto 0;
+      overflow: hidden;
+      border-radius: 2px;
+      position: relative;
+      opacity: 0;
+      animation: fade-up 0.4s ease-out 0.9s forwards;
+    }
+
+    .loader-bar i {
+      display: block;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--green), var(--cream), var(--green));
+      background-size: 200% 100%;
+      border-radius: 2px;
+      box-shadow: 0 0 12px var(--green);
+      animation: load 1.6s 1s cubic-bezier(0.65, 0, 0.35, 1) forwards,
+        shimmer 1.2s 1s linear infinite;
+    }
+
+    @keyframes word-in {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes word-in-glow {
+      0% {
+        opacity: 0;
+        transform: translateY(24px) scale(0.9);
+      }
+
+      60% {
+        text-shadow: 0 0 18px var(--green);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        text-shadow: 0 0 0 transparent;
+      }
+    }
+
+    @keyframes fade-up {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes load {
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes shimmer {
+      to {
+        background-position: -200% 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .loader-logo .word,
+      .loader-sub,
+      .loader-bar,
+      .loader-bar i {
+        animation: none;
+        opacity: 1;
+        width: 100%;
+      }
+    }
+
     .nav {
       position: absolute;
       top: 0;
@@ -1033,12 +1175,23 @@
 
 <body>
 
-  <div class="preloader" id="loader">
+  <!--<div class="preloader" id="loader">
     <div>
       <div class="loader-logo">Chaa<span>yah</span></div>
       <div class="loader-bar"><i></i></div>
     </div>
+  </div>-->
+
+  <div class="preloader" id="loader">
+    <div class="loader-logo">
+      <span class="word">Cup</span>
+      <span class="word accent">By</span>
+      <span class="word">Cup</span>
+    </div>
+    <div class="loader-sub">PURE • FRESH • NATURAL</div>
+    <div class="loader-bar"><i></i></div>
   </div>
+
 
   <header class="nav">
     <a href="#home" class="brand">
@@ -1231,7 +1384,7 @@
 
   <script>
     window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hide'), 1900));
-    const observer = new IntersectionObserver(entries => {entries.forEach(e => {if (e.isIntersecting) e.target.classList.add('show')})}, {threshold: .12});
+    const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show') }) }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(e => observer.observe(e));
     const panel = document.getElementById('mobilePanel');
     document.getElementById('menuBtn').addEventListener('click', () => panel.classList.add('open'));
@@ -1239,7 +1392,7 @@
     panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
     window.addEventListener('scroll', () => {
       let current = '';
-      document.querySelectorAll('section[id]').forEach(s => {if (scrollY >= s.offsetTop - 180) current = s.id});
+      document.querySelectorAll('section[id]').forEach(s => { if (scrollY >= s.offsetTop - 180) current = s.id });
       document.querySelectorAll('.navlinks a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
     });
   </script>
