@@ -1175,6 +1175,7 @@
       background: #f6f3ec;
       color: #1a1a14;
       padding: 100px 48px 90px;
+      overflow: hidden;
     }
 
     .proof-head {
@@ -1217,9 +1218,14 @@
       padding: 36px 30px;
       position: relative;
       box-shadow: 0 2px 14px rgba(26, 26, 20, 0.05);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
     }
 
-    /* small perforated border, built into the card's own right edge */
+    .proof-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 30px rgba(26, 26, 20, 0.1);
+    }
+
     .proof-card:not(:last-child) {
       border-right: 2px dotted rgba(169, 126, 47, 0.4);
     }
@@ -1266,31 +1272,17 @@
       letter-spacing: 0.02em;
     }
 
-    .reveal {
+    /* ===== entry + scroll reveal animation ===== */
+    .reveal-up {
       opacity: 0;
-      transform: translateY(24px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(36px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    .reveal.show {
+    .reveal-up.show {
       opacity: 1;
       transform: translateY(0);
-    }
-
-    .proof-card.reveal:nth-child(1) {
-      transition-delay: 0s;
-    }
-
-    .proof-card.reveal:nth-child(2) {
-      transition-delay: 0.1s;
-    }
-
-    .proof-card.reveal:nth-child(3) {
-      transition-delay: 0.2s;
-    }
-
-    .proof-card.reveal:nth-child(4) {
-      transition-delay: 0.3s;
     }
 
     @media (max-width: 900px) {
@@ -1325,6 +1317,36 @@
       .proof-title {
         font-size: 2.2rem;
       }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-up {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .proof-card:hover {
+        transform: none;
+      }
+    }
+
+    .reveal-up {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* exit state when scrolled past/out of view */
+    .reveal-up.exit {
+      opacity: 0;
+      transform: translateY(-24px);
     }
   </style>
 </head>
@@ -1391,7 +1413,7 @@
   <div class="paint-edge"></div>
 
   <section class="proof-section" id="proof">
-    <div class="proof-head reveal">
+    <div class="proof-head reveal-up">
       <div class="proof-eyebrow">Our Philosophy</div>
       <h2 class="proof-title">Proof Over Promises.</h2>
       <p class="proof-sub">
@@ -1401,28 +1423,28 @@
     </div>
 
     <div class="proof-grid">
-      <div class="proof-card reveal">
+      <div class="proof-card reveal-up" style="transition-delay:0s">
         <span class="proof-num">01</span>
         <h3>Authentic Origin</h3>
         <p class="proof-tag">100% Assam Tea</p>
         <p>Tea with a clear identity and a clear origin. Born in Assam. Made for every cup.</p>
       </div>
 
-      <div class="proof-card reveal">
+      <div class="proof-card reveal-up" style="transition-delay:0.12s">
         <span class="proof-num">02</span>
         <h3>Freshness You Can Check</h3>
         <p class="proof-tag">Packed On · Batch No. · Tea Type</p>
         <p>Don't just call it fresh. Every pack shows the date and batch behind it.</p>
       </div>
 
-      <div class="proof-card reveal">
+      <div class="proof-card reveal-up" style="transition-delay:0.24s">
         <span class="proof-num">03</span>
         <h3>Traceability You Can Follow</h3>
         <p class="proof-tag">Know Your Cup™</p>
         <p>A QR-led journey — origin, batch, taste profile and stories from Assam, from roots to cup.</p>
       </div>
 
-      <div class="proof-card reveal">
+      <div class="proof-card reveal-up" style="transition-delay:0.36s">
         <span class="proof-num">04</span>
         <h3>Quality You Can Understand</h3>
         <p class="proof-tag">The Cup By Cup Standard™</p>
@@ -1430,7 +1452,7 @@
       </div>
     </div>
 
-    <div class="proof-footer reveal">
+    <div class="proof-footer reveal-up">
       <p>From Assam, Cup by Cup.</p>
     </div>
   </section>
@@ -1582,18 +1604,52 @@
   </footer>
 
   <script>
-    window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hide'), 1900));
-    const observer = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show') }) }, { threshold: .12 });
+    window.addEventListener('load', () => setTimeout(() => {
+      const loader = document.getElementById('loader'); // ⚠️ change 'loader' to match your actual preloader id
+      if (loader) loader.classList.add('hide');
+    }, 1900));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show') });
+    }, { threshold: .12 });
     document.querySelectorAll('.reveal').forEach(e => observer.observe(e));
+
     const panel = document.getElementById('mobilePanel');
-    document.getElementById('menuBtn').addEventListener('click', () => panel.classList.add('open'));
-    document.getElementById('closeBtn').addEventListener('click', () => panel.classList.remove('open'));
-    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    if (panel && menuBtn && closeBtn) {
+      menuBtn.addEventListener('click', () => panel.classList.add('open'));
+      closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => panel.classList.remove('open')));
+    }
+
     window.addEventListener('scroll', () => {
       let current = '';
       document.querySelectorAll('section[id]').forEach(s => { if (scrollY >= s.offsetTop - 180) current = s.id });
       document.querySelectorAll('.navlinks a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
     });
+
+    const proofObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove('exit');
+          entry.target.classList.add('show');
+        } else {
+          // figure out if it left going up (scrolled past, above viewport) or hasn't been seen yet (below)
+          const rect = entry.boundingClientRect;
+          if (rect.top < 0) {
+            // scrolled UP and out of top of viewport → exit upward
+            entry.target.classList.remove('show');
+            entry.target.classList.add('exit');
+          } else {
+            // still below viewport, hasn't entered yet → reset to entry state
+            entry.target.classList.remove('show', 'exit');
+          }
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('#proof .reveal-up').forEach(el => proofObserver.observe(el));
   </script>
 </body>
 
