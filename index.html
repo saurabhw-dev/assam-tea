@@ -122,7 +122,145 @@
 
     .brand-name {
       font: 600 34px var(--serif);
-      line-height: .8
+      line-height: .85;
+      letter-spacing: 1px;
+
+      position: relative;
+      display: inline-block;
+
+      /* Premium gold/cream text */
+      background: linear-gradient(120deg,
+          #e8d7b8 0%,
+          #fff8e8 20%,
+          #b98a4a 40%,
+          #fff5dc 55%,
+          #d2ad72 75%,
+          #f7ead0 100%);
+
+      background-size: 300% 100%;
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      animation:
+        logoShine 4s ease-in-out infinite,
+        logoFloat 3.5s ease-in-out infinite;
+
+      text-shadow:
+        0 0 18px rgba(214, 174, 105, .12);
+
+      transition:
+        transform .5s cubic-bezier(.2, .8, .2, 1),
+        letter-spacing .5s ease;
+    }
+
+
+    /* Moving luxury light */
+    @keyframes logoShine {
+
+      0% {
+        background-position: 200% 50%;
+      }
+
+      45% {
+        background-position: 0% 50%;
+      }
+
+      100% {
+        background-position: -200% 50%;
+      }
+
+    }
+
+
+    /* Very subtle floating effect */
+    @keyframes logoFloat {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-3px);
+      }
+
+    }
+
+
+    /* Elegant line underneath */
+
+    .brand-name::after {
+
+      content: "";
+
+      position: absolute;
+
+      left: 50%;
+      bottom: -9px;
+
+      width: 0;
+      height: 1px;
+
+      background: linear-gradient(90deg,
+          transparent,
+          #d4aa6a,
+          #fff1cf,
+          #d4aa6a,
+          transparent);
+
+      transform: translateX(-50%);
+
+      animation: logoLine 4s ease-in-out infinite;
+
+    }
+
+
+    @keyframes logoLine {
+
+      0%,
+      20% {
+        width: 0;
+        opacity: 0;
+      }
+
+      40% {
+        width: 75%;
+        opacity: 1;
+      }
+
+      65% {
+        width: 75%;
+        opacity: 1;
+      }
+
+      85%,
+      100% {
+        width: 0;
+        opacity: 0;
+      }
+
+    }
+
+
+    /* Hover becomes more premium */
+
+    .brand:hover .brand-name {
+
+      transform: translateY(-4px) scale(1.03);
+
+      letter-spacing: 2px;
+
+      text-shadow:
+        0 0 10px rgba(225, 188, 120, .25),
+        0 0 30px rgba(225, 188, 120, .12);
+
+    }
+
+    /* Small luxury movement on hover */
+    .brand-name:hover {
+      transform: translateY(-2px);
     }
 
     .brand-sub {
@@ -906,7 +1044,7 @@
     <a href="#home" class="brand">
       <div class="brand-mark">♧</div>
       <div>
-        <div class="brand-name">Chaayah</div>
+        <div class="brand-name">Cup By Cup</div>
         <div class="brand-sub">PURE • FRESH • NATURAL</div>
       </div>
     </a>
