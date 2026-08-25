@@ -1170,6 +1170,162 @@
         flex-wrap: wrap
       }
     }
+
+    .proof-section {
+      background: #f6f3ec;
+      color: #1a1a14;
+      padding: 100px 48px 90px;
+    }
+
+    .proof-head {
+      max-width: 640px;
+      margin: 0 auto 60px;
+      text-align: center;
+    }
+
+    .proof-eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #a97e2f;
+      margin-bottom: 18px;
+      font-weight: 600;
+    }
+
+    .proof-title {
+      font: 600 3rem var(--serif);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #1a1a14;
+    }
+
+    .proof-sub {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: rgba(26, 26, 20, 0.6);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    .proof-card {
+      background: #fffdf8;
+      padding: 36px 30px;
+      position: relative;
+      box-shadow: 0 2px 14px rgba(26, 26, 20, 0.05);
+    }
+
+    /* small perforated border, built into the card's own right edge */
+    .proof-card:not(:last-child) {
+      border-right: 2px dotted rgba(169, 126, 47, 0.4);
+    }
+
+    .proof-num {
+      display: block;
+      font: 600 2rem var(--serif);
+      color: #a97e2f;
+      opacity: 0.6;
+      margin-bottom: 18px;
+    }
+
+    .proof-card h3 {
+      font: 600 1.3rem var(--serif);
+      margin-bottom: 10px;
+      line-height: 1.28;
+      color: #1a1a14;
+    }
+
+    .proof-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a97e2f;
+      margin-bottom: 14px;
+      font-weight: 600;
+    }
+
+    .proof-card p:last-child {
+      font-size: 0.87rem;
+      line-height: 1.65;
+      color: rgba(26, 26, 20, 0.55);
+    }
+
+    .proof-footer {
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    .proof-footer p {
+      font: 500 1.3rem var(--serif);
+      font-style: italic;
+      color: #a97e2f;
+      letter-spacing: 0.02em;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .proof-card.reveal:nth-child(1) {
+      transition-delay: 0s;
+    }
+
+    .proof-card.reveal:nth-child(2) {
+      transition-delay: 0.1s;
+    }
+
+    .proof-card.reveal:nth-child(3) {
+      transition-delay: 0.2s;
+    }
+
+    .proof-card.reveal:nth-child(4) {
+      transition-delay: 0.3s;
+    }
+
+    @media (max-width: 900px) {
+      .proof-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .proof-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .proof-card:nth-child(1),
+      .proof-card:nth-child(2) {
+        border-bottom: 2px dotted rgba(169, 126, 47, 0.4);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .proof-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .proof-card {
+        border-right: none !important;
+        border-bottom: 2px dotted rgba(169, 126, 47, 0.4);
+      }
+
+      .proof-card:last-child {
+        border-bottom: none;
+      }
+
+      .proof-title {
+        font-size: 2.2rem;
+      }
+    }
   </style>
 </head>
 
@@ -1232,9 +1388,52 @@
     </div>
     <div class="follow"><span>◎</span><span>f</span><span>♧</span><small>Follow Us</small></div>
   </section>
-
-
   <div class="paint-edge"></div>
+
+  <section class="proof-section" id="proof">
+    <div class="proof-head reveal">
+      <div class="proof-eyebrow">Our Philosophy</div>
+      <h2 class="proof-title">Proof Over Promises.</h2>
+      <p class="proof-sub">
+        Premium. Fresh. Strong. Authentic. We believe these words should mean something —
+        so instead of just saying it, we show it.
+      </p>
+    </div>
+
+    <div class="proof-grid">
+      <div class="proof-card reveal">
+        <span class="proof-num">01</span>
+        <h3>Authentic Origin</h3>
+        <p class="proof-tag">100% Assam Tea</p>
+        <p>Tea with a clear identity and a clear origin. Born in Assam. Made for every cup.</p>
+      </div>
+
+      <div class="proof-card reveal">
+        <span class="proof-num">02</span>
+        <h3>Freshness You Can Check</h3>
+        <p class="proof-tag">Packed On · Batch No. · Tea Type</p>
+        <p>Don't just call it fresh. Every pack shows the date and batch behind it.</p>
+      </div>
+
+      <div class="proof-card reveal">
+        <span class="proof-num">03</span>
+        <h3>Traceability You Can Follow</h3>
+        <p class="proof-tag">Know Your Cup™</p>
+        <p>A QR-led journey — origin, batch, taste profile and stories from Assam, from roots to cup.</p>
+      </div>
+
+      <div class="proof-card reveal">
+        <span class="proof-num">04</span>
+        <h3>Quality You Can Understand</h3>
+        <p class="proof-tag">The Cup By Cup Standard™</p>
+        <p>Strength, colour, body, aroma — a simple language for every batch, every cup.</p>
+      </div>
+    </div>
+
+    <div class="proof-footer reveal">
+      <p>From Assam, Cup by Cup.</p>
+    </div>
+  </section>
 
   <!--<section class="features">
     <article class="feature reveal">
