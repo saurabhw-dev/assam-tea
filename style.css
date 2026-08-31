@@ -1,0 +1,1287 @@
+/* ==========================================
+   RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    width: 100%;
+    min-height: 100%;
+
+    font-family: "Montserrat", sans-serif;
+
+    background: #0b160c;
+
+    overflow-x: hidden;
+}
+
+
+/* ==========================================
+   HERO SECTION
+
+   Slightly smaller than full viewport
+   This gives a more "zoomed out" feeling
+========================================== */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+    overflow: hidden;
+
+    background-image: url("images/Header_Img_final.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #0b160c;
+
+    /* Entry animation initial state */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+
+    /*
+       Darker on left
+       Lighter on right
+    */
+
+    background:
+
+        linear-gradient(90deg,
+
+            rgba(4, 14, 6, 0.82) 0%,
+
+            rgba(4, 14, 6, 0.62) 30%,
+
+            rgba(4, 14, 6, 0.22) 55%,
+
+            rgba(4, 14, 6, 0.03) 100%);
+
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   NAVBAR
+
+   Smaller / zoomed out
+========================================== */
+
+.navbar {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 64px;
+
+
+    display: flex;
+
+    align-items: center;
+
+
+    /* Space for logo */
+
+    padding:
+
+        0 40px 0 225px;
+
+
+    background:
+
+        rgba(9, 25, 12, 0.92);
+
+
+    border-bottom:
+
+        1px solid rgba(255, 255, 255, 0.06);
+
+
+    z-index: 10;
+}
+
+
+/* ==========================================
+   LOGO BOX
+========================================== */
+
+/* ==========================================
+   LOGO BOX
+========================================== */
+
+.logo-box {
+    position: absolute;
+
+    top: 16px;
+
+    left: 24px;
+
+
+    width: 76px;
+
+    height: 104px;
+
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    padding:
+
+        10px 6px;
+
+
+    color: #ece9df;
+
+
+    background:
+
+        linear-gradient(180deg,
+
+            rgba(12, 29, 15, 0.98),
+
+            rgba(8, 21, 10, 0.98));
+
+
+    border:
+
+        1px solid rgba(255, 255, 255, 0.55);
+
+
+    border-radius:
+
+        38px 38px 10px 10px;
+
+
+    z-index: 20;
+}
+
+
+/* ==========================================
+   LOGO SYMBOL
+========================================== */
+
+.logo-symbol {
+    font-size: 13px;
+
+    line-height: 1;
+
+    margin-bottom: 2px;
+}
+
+
+/* ==========================================
+   LOGO TEXT
+========================================== */
+
+.logo-main {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    line-height: 0.72;
+}
+
+
+.logo-main span {
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: -0.6px;
+}
+
+
+.logo-main small {
+    font-family:
+
+        "Cormorant Garamond",
+        serif;
+
+
+    font-size: 8px;
+
+    font-style: italic;
+
+
+    align-self: flex-start;
+
+
+    margin-left: 8px;
+
+    line-height: 1;
+}
+
+
+/* ==========================================
+   LOGO SUBTITLE
+========================================== */
+
+.logo-subtitle {
+    margin-top: 5px;
+
+    font-size: 3.2px;
+
+    letter-spacing: 0.3px;
+
+    white-space: nowrap;
+
+    opacity: 0.9;
+}
+
+/* ==========================================
+   NAVIGATION
+========================================== */
+
+.nav-menu {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.nav-menu a {
+    color: #d9d9d4;
+
+    text-decoration: none;
+
+
+    font-size: 10px;
+
+    font-weight: 500;
+
+
+    letter-spacing: 2px;
+
+
+    transition:
+
+        color 0.3s ease;
+}
+
+
+.nav-menu a:hover {
+    color: #df7628;
+}
+
+
+/* ==========================================
+   NAVIGATION DOT
+========================================== */
+
+.nav-dot {
+    color: #dd7126;
+
+    font-size: 13px;
+
+    line-height: 1;
+}
+
+
+/* ==========================================
+   CART
+========================================== */
+
+.cart-icon {
+    margin-left: auto;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    color: #e3e3dc;
+
+
+    width: 26px;
+
+    height: 26px;
+
+
+    transition:
+
+        color 0.3s ease;
+}
+
+
+.cart-icon svg {
+    width: 26px;
+
+    height: 26px;
+}
+
+
+.cart-icon:hover {
+    color: #df7628;
+}
+
+
+/* ==========================================
+   HERO CONTENT
+
+   Smaller and zoomed out
+========================================== */
+
+.hero-content {
+    position: absolute;
+
+
+    left: 42px;
+
+
+    top: 50%;
+
+
+    transform:
+
+        translateY(-48%);
+
+
+    max-width: 450px;
+
+
+    z-index: 5;
+}
+
+
+/* ==========================================
+   SMALL ORANGE TEXT
+========================================== */
+.eyebrow {
+    color: #df792d;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 2.2px;
+
+    margin-top: 30px;
+    margin-bottom: 12px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: eyebrowEntry 0.8s ease-out 0.4s forwards;
+}
+
+@keyframes eyebrowEntry {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.eyebrow span {
+    margin:
+
+        0 6px;
+}
+
+
+/* ==========================================
+   MAIN HEADING
+========================================== */
+.hero-content h1 {
+    font-family: "Cormorant Garamond", serif;
+
+    color: #f0eee7;
+
+    font-size: clamp(46px, 4.6vw, 72px);
+
+    font-weight: 500;
+
+    line-height: 0.90;
+
+    letter-spacing: -1px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(35px);
+    animation: headingEntry 1s ease-out 0.6s forwards;
+}
+
+@keyframes headingEntry {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+.hero-description {
+    color: #deded8;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.2px;
+
+    margin-bottom: 22px;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(25px);
+    animation: descriptionEntry 0.8s ease-out 0.9s forwards;
+}
+
+@keyframes descriptionEntry {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+.hero-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(25px);
+    animation: buttonsEntry 0.8s ease-out 1.2s forwards;
+}
+
+@keyframes buttonsEntry {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.primary-btn {
+    height: 45px;
+
+
+    padding:
+
+        0 26px;
+
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    color: #ffffff;
+
+
+    text-decoration: none;
+
+
+    font-size: 9px;
+
+
+    font-weight: 600;
+
+
+    letter-spacing: 1.8px;
+
+
+    background: #d96517;
+
+
+    border:
+
+        1px solid #ef9a58;
+
+
+    transition:
+
+        all 0.3s ease;
+}
+
+
+.primary-btn:hover {
+    background:
+
+        #bd5510;
+
+
+    transform:
+
+        translateY(-2px);
+}
+
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+
+.secondary-btn {
+    position: relative;
+
+
+    color: #eeeeea;
+
+
+    text-decoration: none;
+
+
+    font-size: 9px;
+
+
+    font-weight: 500;
+
+
+    letter-spacing: 1.5px;
+
+
+    padding-bottom: 8px;
+
+
+    transition:
+
+        color 0.3s ease;
+}
+
+
+.secondary-btn::after {
+    content: "";
+
+
+    position: absolute;
+
+
+    left: 0;
+
+    bottom: 0;
+
+
+    width: 100%;
+
+    height: 1px;
+
+
+    background: #d5681d;
+}
+
+
+.secondary-btn:hover {
+    color: #df792d;
+}
+
+
+/* ==========================================
+   BEGIN IN ASSAM
+========================================== */
+.begin-assam {
+    position: absolute;
+
+    left: 42px;
+    bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #e6b47c;
+    text-decoration: none;
+
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+
+    z-index: 5;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: beginAssamEntry 0.8s ease-out 1.5s forwards;
+}
+
+@keyframes beginAssamEntry {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   SCROLL CIRCLE
+========================================== */
+
+.scroll-circle {
+    width: 44px;
+
+    height: 44px;
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+    border:
+
+        1px solid #d77425;
+
+
+    border-radius: 50%;
+
+
+    font-size: 21px;
+
+
+    font-weight: 300;
+
+
+    transition:
+
+        all 0.3s ease;
+}
+
+
+.begin-assam:hover .scroll-circle {
+    transform:
+
+        translateY(4px);
+
+
+    background:
+
+        rgba(215, 116, 37, 0.15);
+}
+
+
+/* ==========================================
+   SPACE BELOW FIRST LANDING
+========================================== */
+
+.landing-space {
+    width: 100%;
+
+    height: 60px;
+
+    background: #0b160c;
+}
+
+
+/* ==========================================
+   NEXT SECTION PLACEHOLDER
+========================================== */
+
+#next-section {
+    min-height: 1px;
+
+    background: #0b160c;
+}
+
+/* ==========================================
+   BORN IN ASSAM SECTION
+========================================== */
+/* ==========================================
+   ANIMATED BOTTOM WAVE
+========================================== */
+
+.born-assam-section {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    overflow: hidden;
+    background: #061b0d;
+}
+
+/* ==========================================
+   FLOWING WAVE
+========================================== */
+
+.born-assam-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==========================================
+   CONTINUOUS MOVING WAVE
+========================================== */
+
+.wave-container {
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 55px;
+
+    overflow: hidden;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+/* SVG WAVE */
+
+.wave-svg {
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 200%;
+    height: 35px;
+
+    fill: white;
+
+    animation: continuousWave 8s linear infinite;
+}
+
+
+/* SECOND COPY */
+
+.wave-copy {
+    left: 100%;
+}
+
+
+/* CONTINUOUS LEFT → RIGHT FLOW */
+
+@keyframes continuousWave {
+
+    from {
+        transform: translateX(-50%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+
+/* ==========================================
+   LEFT SIDE CONTENT
+========================================== */
+
+.born-assam-content {
+    position: absolute;
+    left: 42px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    z-index: 5;
+}
+
+
+.born-number {
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #f0eee7;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 24px;
+}
+
+
+.born-text h2 {
+    margin: 0 0 6px 0;
+
+    color: #f0eee7;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 30px;
+    font-weight: 500;
+
+    letter-spacing: 1px;
+}
+
+
+.born-text p {
+    margin: 0;
+
+    color: #d8d8d2;
+
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+
+/* ==========================================
+   RIGHT SIDE IMAGE
+========================================== */
+
+.born-assam-image {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 70%;
+    height: 100%;
+
+    background-image: url("images/Born_In_Assam.png");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    /*
+       CURVED LEFT SIDE
+       IMAGE TOUCHES TOP + BOTTOM
+    */
+
+    clip-path: ellipse(92% 135% at 100% 50%);
+}
+
+
+/* ==========================================
+   RESPONSIVE - LAPTOP
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .navbar {
+        padding-left: 200px;
+
+        padding-right: 30px;
+    }
+
+
+    .nav-menu {
+        gap: 14px;
+    }
+
+
+    .nav-menu a {
+        font-size: 9px;
+
+        letter-spacing: 1.6px;
+    }
+
+
+    .hero-content {
+        left: 38px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - TABLET
+========================================== */
+
+@media (max-width: 900px) {
+
+    .nav-menu {
+        display: none;
+    }
+
+
+    .navbar {
+        padding:
+
+            0 25px;
+    }
+
+
+    .cart-icon {
+        margin-left: auto;
+    }
+
+
+    .logo-box {
+        left: 22px;
+    }
+
+
+    .hero-content {
+        left: 32px;
+
+        max-width: 400px;
+    }
+
+}
+
+
+/* ==========================================
+   RESPONSIVE - MOBILE
+========================================== */
+
+@media (max-width: 600px) {
+
+    .hero-section {
+        height: calc(100vh - 25px);
+
+        min-height: 600px;
+
+        background-position:
+
+            60% center;
+    }
+
+
+    /* MOBILE OVERLAY */
+
+    .hero-overlay {
+        background:
+
+            linear-gradient(90deg,
+
+                rgba(4, 14, 6, 0.88),
+
+                rgba(4, 14, 6, 0.58),
+
+                rgba(4, 14, 6, 0.25));
+    }
+
+
+    /* HEADER */
+
+    .navbar {
+        height: 60px;
+
+        padding:
+
+            0 20px;
+    }
+
+
+    /* LOGO */
+
+    .logo-box {
+        left: 15px;
+
+        width: 90px;
+
+        height: 145px;
+
+        padding:
+
+            12px 6px;
+    }
+
+
+    .logo-symbol {
+        font-size: 17px;
+    }
+
+
+    .logo-main span {
+        font-size: 31px;
+    }
+
+
+    .logo-main small {
+        font-size: 13px;
+    }
+
+
+    .logo-subtitle {
+        font-size: 4px;
+    }
+
+
+    /* HERO CONTENT */
+
+    .hero-content {
+        left: 24px;
+
+        right: 24px;
+
+        top: 52%;
+
+        max-width: none;
+    }
+
+
+    .eyebrow {
+        font-size: 8px;
+
+        letter-spacing: 1.3px;
+    }
+
+
+    .hero-content h1 {
+        font-size:
+
+            clamp(46px,
+                14vw,
+                64px);
+
+
+        line-height: 0.92;
+    }
+
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+
+    /* BUTTONS */
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+    }
+
+
+    .primary-btn {
+        height: 44px;
+
+        padding:
+
+            0 22px;
+    }
+
+
+    /* BEGIN ASSAM */
+
+    .begin-assam {
+        left: 24px;
+
+        bottom: 18px;
+    }
+
+
+    .scroll-circle {
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 20px;
+    }
+
+
+    .landing-space {
+        height: 25px;
+    }
+
+    /* ==========================================
+   BORN IN ASSAM SECTION
+========================================== */
+
+
+    .born-assam-section {
+        position: relative;
+
+        width: 100%;
+        height: 230px;
+
+        overflow: hidden;
+
+        background: #061b0d;
+    }
+
+
+    /* ==========================================
+   LEFT SIDE CONTENT
+========================================== */
+
+    .born-assam-content {
+        position: absolute;
+
+        left: 42px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 22px;
+
+        z-index: 5;
+    }
+
+
+    .born-number {
+        width: 52px;
+        height: 52px;
+
+        border: 1px solid rgba(255, 255, 255, 0.55);
+
+        border-radius: 50%;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        color: #f0eee7;
+
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 24px;
+    }
+
+
+    .born-text h2 {
+        margin: 0 0 6px 0;
+
+        color: #f0eee7;
+
+        font-family: "Cormorant Garamond", serif;
+
+        font-size: 30px;
+
+        font-weight: 500;
+
+        letter-spacing: 1px;
+    }
+
+
+    .born-text p {
+        margin: 0;
+
+        color: #d8d8d2;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+
+    /* ==========================================
+   RIGHT SIDE IMAGE
+========================================== */
+
+    .born-assam-image {
+        position: absolute;
+
+        top: 0;
+        right: 0;
+
+        width: 68%;
+        height: 100%;
+
+        background-image: url("images/Born_In_Assam.png");
+
+        background-size: cover;
+
+        background-position: center;
+
+        background-repeat: no-repeat;
+
+        /*
+       CURVED LEFT EDGE
+    */
+
+        clip-path: ellipse(88% 120% at 100% 50%);
+    }
+
+
+}
