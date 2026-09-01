@@ -2301,3 +2301,558 @@ body {
         display: none;
     }
 }
+
+/* ==========================================
+   SECTION 3 - THE PEOPLE BEHIND YOUR CUP
+========================================== */
+
+.people-section {
+    width: 100%;
+    min-height: 250px;
+
+    background: #172819;
+
+    display: flex;
+    align-items: center;
+
+    padding: 25px 5%;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    gap: 35px;
+}
+
+
+/* ==========================================
+   LEFT TEXT
+========================================== */
+
+.people-info {
+    width: 28%;
+    min-width: 250px;
+    color: #f3efe4;
+}
+
+.people-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.section-number {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, serif;
+    font-size: 22px;
+
+    flex-shrink: 0;
+}
+
+.people-info h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(23px, 2vw, 34px);
+    line-height: 1.05;
+
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    color: #f3efe4;
+}
+
+.people-info p {
+    margin: 15px 0 0 54px;
+
+    font-size: 14px;
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* ==========================================
+   FOUR IMAGES
+========================================== */
+
+.people-images {
+    flex: 1;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 3px;
+}
+
+.people-image {
+    height: 220px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    background: #243827;
+}
+
+.people-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+
+/* IMAGE ZOOM */
+
+.people-image:hover img {
+    transform: scale(1.08);
+}
+
+
+/* DARK OVERLAY */
+
+.people-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.20),
+            transparent 60%);
+
+    pointer-events: none;
+}
+/* ==========================================
+   PEOPLE SECTION SCROLL ANIMATION
+========================================== */
+
+
+/* WHOLE LEFT CONTENT */
+
+.people-section .people-info {
+    opacity: 0;
+    transform: translateX(-80px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.people-section.show .people-info {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* NUMBER */
+
+.people-section .section-number {
+    opacity: 0;
+    transform: scale(0.4) rotate(-90deg);
+
+    transition:
+        opacity 0.7s ease 0.15s,
+        transform 0.7s cubic-bezier(.34, 1.56, .64, 1) 0.15s;
+}
+
+.people-section.show .section-number {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+}
+
+
+/* HEADING */
+
+.people-section .people-heading h2 {
+    opacity: 0;
+    transform: translateY(40px);
+
+    transition:
+        opacity 0.8s ease 0.25s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+}
+
+.people-section.show .people-heading h2 {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* DESCRIPTION */
+
+.people-section .people-info p {
+    opacity: 0;
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease 0.45s,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.45s;
+}
+
+.people-section.show .people-info p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   IMAGES
+========================================== */
+
+.people-section .people-image {
+    opacity: 0;
+    transform: translateY(70px) scale(0.95);
+
+    transition:
+        opacity 0.75s ease,
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* STAGGER */
+
+.people-section .people-image:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.people-section .people-image:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.people-section .people-image:nth-child(3) {
+    transition-delay: 0.4s;
+}
+
+.people-section .people-image:nth-child(4) {
+    transition-delay: 0.55s;
+}
+
+
+/* SHOW IMAGES */
+
+.people-section.show .people-image {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* ==========================================
+   PEOPLE SECTION - TABLET RESPONSIVE
+========================================== */
+
+@media (max-width: 1024px) {
+
+    .people-section {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 45px 30px;
+        gap: 30px;
+    }
+
+    .people-info {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .people-images {
+        width: 100%;
+        flex: unset;
+
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .people-image {
+        height: 220px;
+    }
+}
+
+
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .people-section {
+        padding: 50px 20px 35px;
+
+        gap: 35px;
+    }
+
+
+    /* LEFT CONTENT */
+
+    .people-info {
+        width: 100%;
+    }
+
+    .people-heading {
+        gap: 12px;
+        align-items: center;
+    }
+
+    .section-number {
+        width: 42px;
+        height: 42px;
+
+        font-size: 20px;
+
+        flex-shrink: 0;
+    }
+
+    .people-info h2 {
+        font-size: 28px;
+        line-height: 1.08;
+    }
+
+    .people-info p {
+        margin: 18px 0 0 54px;
+
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+    /* ==========================================
+       IMAGES - 2 x 2 GRID
+    ========================================== */
+
+    .people-images {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+    .people-image {
+        width: 100%;
+        height: 220px;
+
+        border-radius: 2px;
+    }
+
+    .people-image img {
+        width: 100%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .people-section {
+        padding: 40px 15px 30px;
+
+        gap: 28px;
+    }
+
+
+    .people-heading {
+        gap: 10px;
+    }
+
+    .section-number {
+        width: 38px;
+        height: 38px;
+
+        font-size: 18px;
+    }
+
+    .people-info h2 {
+        font-size: 23px;
+        line-height: 1.1;
+    }
+
+
+    .people-info p {
+        margin: 15px 0 0 48px;
+
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+
+    .people-images {
+        gap: 6px;
+    }
+
+    .people-image {
+        height: 180px;
+    }
+}
+/* ==========================================
+   PEOPLE SECTION CURVE
+========================================== */
+
+.people-section {
+    position: relative;
+    overflow: visible;
+
+    /* Important: creates space for curve */
+    padding-bottom: 100px;
+}
+
+
+.people-curve {
+    position: absolute;
+
+    left: 5%;
+    bottom: 20px;
+
+    width: 90%;
+    height: 70px;
+
+    border-top: 2px solid rgba(185, 154, 98, 0.85);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+/* ==========================================
+   VERY SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .people-info h2 {
+        font-size: 20px;
+    }
+
+    .people-image {
+        height: 155px;
+    }
+
+    .people-info p {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   SECTION 4 - ASSAM JOURNEY
+========================================== */
+
+.assam-reached-section {
+    width: 100%;
+    background: #172819;
+
+    margin: 0;
+    padding: 10px 0 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.assam-reached-image {
+    width: 78%;
+    height: 230px;
+
+    display: block;
+
+    object-fit: fill;
+}
+/* ==========================================
+   SECTION 4 SCROLL ANIMATION
+========================================== */
+
+.assam-reached-image {
+    opacity: 0;
+    transform: translateY(50px) scale(0.96);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.assam-reached-section.show .assam-reached-image {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+/* ==========================================
+   SECTION 4 - MOBILE RESPONSIVE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .assam-reached-section {
+        width: 100%;
+
+        padding: 15px 0 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        overflow: hidden;
+    }
+
+    .assam-reached-image {
+        width: 88%;
+        height: 120px;
+
+        object-fit: fill;
+
+        display: block;
+    }
+}
+
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+
+    .assam-reached-section {
+        padding: 10px 0 15px;
+    }
+
+    .assam-reached-image {
+        width: 92%;
+        height: 100px;
+
+        object-fit: fill;
+    }
+}
+
+
+/* ==========================================
+   VERY SMALL MOBILE
+========================================== */
+
+@media (max-width: 360px) {
+
+    .assam-reached-image {
+        width: 94%;
+        height: 85px;
+    }
+}
