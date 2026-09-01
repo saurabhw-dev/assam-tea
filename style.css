@@ -2438,6 +2438,7 @@ body {
 
     pointer-events: none;
 }
+
 /* ==========================================
    PEOPLE SECTION SCROLL ANIMATION
 ========================================== */
@@ -2550,6 +2551,7 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+
 /* ==========================================
    PEOPLE SECTION - TABLET RESPONSIVE
 ========================================== */
@@ -2704,6 +2706,7 @@ body {
         height: 180px;
     }
 }
+
 /* ==========================================
    PEOPLE SECTION CURVE
 ========================================== */
@@ -2774,12 +2777,13 @@ body {
 
 .assam-reached-image {
     width: 78%;
-    height: 230px;
+    height: 250px;
 
     display: block;
 
     object-fit: fill;
 }
+
 /* ==========================================
    SECTION 4 BOTTOM CURVE
 ========================================== */
@@ -2812,6 +2816,7 @@ body {
 
     pointer-events: none;
 }
+
 /* ==========================================
    SECTION 4 SCROLL ANIMATION
 ========================================== */
@@ -2829,6 +2834,7 @@ body {
     opacity: 1;
     transform: translateY(0) scale(1);
 }
+
 /* ==========================================
    SECTION 4 - MOBILE RESPONSIVE
 ========================================== */
@@ -2895,7 +2901,7 @@ body {
 
 .cup-moments-section {
     width: 100%;
-    background: #f5f4f0;
+    background: white;
     padding: 45px 5% 55px;
     box-sizing: border-box;
     overflow: hidden;
@@ -2997,11 +3003,9 @@ body {
     flex: 0 0 calc((100vw - 200px) / 4);
     max-width: 270px;
 
-    background: linear-gradient(
-        180deg,
-        #ffffff 0%,
-        #faf9f6 100%
-    );
+    background: linear-gradient(180deg,
+            #ffffff 0%,
+            #faf9f6 100%);
 
     border-radius: 16px;
 
@@ -3039,12 +3043,10 @@ body {
 
     height: 3px;
 
-    background: linear-gradient(
-        90deg,
-        transparent,
-        #b58a52,
-        transparent
-    );
+    background: linear-gradient(90deg,
+            transparent,
+            #b58a52,
+            transparent);
 
     border-radius: 0 0 10px 10px;
 
@@ -3124,11 +3126,9 @@ body {
     width: 100%;
     height: 35px;
 
-    background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.12),
-        transparent
-    );
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.12),
+            transparent);
 
     pointer-events: none;
 }
@@ -3241,6 +3241,7 @@ body {
 .moment-arrow:hover {
     transform: scale(1.2);
 }
+
 /* SECTION 5 CARDS INITIAL STATE */
 
 .cup-moments-section .moment-card {
@@ -3436,4 +3437,1579 @@ body {
         transform: translateY(0) scale(1);
     }
 
+}
+
+/* ==========================================
+   SECTION 6 - CHOOSE YOUR CUP
+========================================== */
+
+.choose-cup-section {
+    width: 100%;
+    background: #f6f4ee;
+
+    padding: 28px 5% 38px;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+.choose-cup-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.choose-cup-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.choose-cup-number {
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #9f9b91;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Georgia, serif;
+    font-size: 23px;
+
+    color: #343a32;
+
+    flex-shrink: 0;
+}
+
+
+.choose-cup-heading h2 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 28px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #28362c;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.choose-cup-content {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 280px minmax(0, 1fr);
+
+    align-items: center;
+
+    gap: 35px;
+}
+
+
+/* ==========================================
+   PRODUCTS
+========================================== */
+
+.tea-product {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+}
+
+
+/* PRODUCT IMAGE */
+
+.tea-product-image {
+    width: 135px;
+    height: 205px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tea-product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    filter: drop-shadow(0 10px 12px rgba(0, 0, 0, 0.13));
+
+    transition: transform 0.4s ease;
+}
+
+
+.tea-product:hover .tea-product-image img {
+    transform: translateY(-6px) scale(1.03);
+}
+
+
+/* PRODUCT INFO */
+
+.tea-product-info {
+    min-width: 0;
+}
+
+
+.tea-product-info h3 {
+    margin: 0 0 13px;
+
+    font-family: Georgia, serif;
+
+    font-size: 19px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.5px;
+
+    color: #2d332d;
+}
+
+
+.tea-type,
+.tea-features {
+    margin: 7px 0;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #494949;
+}
+
+
+.tea-type span,
+.tea-features span {
+    color: #a4773e;
+}
+
+
+.full-bodied {
+    display: inline-block;
+    margin-top: 2px;
+}
+
+
+/* ==========================================
+   PRICE
+========================================== */
+
+.tea-price {
+    margin-top: 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 9px;
+
+    font-family: Georgia, serif;
+
+    font-size: 17px;
+
+    color: #333;
+}
+
+
+.tea-price strong {
+    font-size: 21px;
+
+    color: #28362c;
+
+    font-weight: 600;
+}
+
+
+.price-dot {
+    color: #b38a54;
+}
+
+
+/* ==========================================
+   ADD TO CART
+========================================== */
+
+.tea-cart-btn {
+    margin-top: 10px;
+
+    min-width: 145px;
+
+    border: none;
+
+    padding: 10px 20px;
+
+    background: #c45c16;
+
+    color: #fff;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+
+    cursor: pointer;
+
+    border-radius: 2px;
+
+    box-shadow:
+        0 5px 12px rgba(196, 92, 22, 0.22);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.tea-cart-btn:hover {
+    background: #9f4710;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(159, 71, 16, 0.28);
+}
+
+
+/* ==========================================
+   PROFILE GUIDE
+========================================== */
+
+.tea-profile-guide {
+    min-height: 215px;
+
+    padding: 10px 25px;
+
+    border-left: 1px solid rgba(0, 0, 0, 0.09);
+    border-right: 1px solid rgba(0, 0, 0, 0.09);
+
+    box-sizing: border-box;
+}
+
+
+.tea-profile-guide h3 {
+    margin: 0;
+
+    text-align: center;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.6px;
+
+    color: #444;
+}
+
+
+.profile-divider {
+    width: 100%;
+    height: 1px;
+
+    background: rgba(0, 0, 0, 0.12);
+
+    margin: 10px 0 18px;
+}
+
+
+.profile-block {
+    margin-bottom: 25px;
+}
+
+
+.profile-label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    font-size: 13px;
+
+    color: #555;
+}
+
+/* ==========================================
+   REALISTIC LEAF STRENGTH INDICATOR
+========================================== */
+
+.strength-leaves {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+/* LEAF */
+
+.strength-leaf {
+    width: 15px;
+    height: 25px;
+
+    display: inline-block;
+
+    position: relative;
+
+    background: #d8d8d0;
+
+    border-radius: 100% 0 100% 0;
+
+    transform: rotate(-35deg);
+
+    opacity: 0.65;
+
+    transition: all 0.3s ease;
+}
+
+
+/* ACTIVE DARK GREEN LEAF */
+
+.strength-leaf.active {
+    background: #294533;
+
+    opacity: 1;
+
+    box-shadow: inset -2px -2px 3px rgba(0, 0, 0, 0.18);
+}
+
+
+/* LEAF MIDDLE VEIN */
+
+.strength-leaf::before {
+    content: "";
+
+    position: absolute;
+
+    width: 1px;
+    height: 28px;
+
+    background: rgba(255, 255, 255, 0.5);
+
+    left: 50%;
+    top: -2px;
+
+    transform:
+        translateX(-50%) rotate(45deg);
+
+    transform-origin: center;
+}
+
+
+/* LEAF STEM */
+
+.strength-leaf::after {
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+    height: 1px;
+
+    background: currentColor;
+
+    left: -6px;
+    bottom: -3px;
+
+    transform: rotate(38deg);
+
+    opacity: 0.5;
+}
+
+/* ==========================================
+   LIQUOR COLOUR
+========================================== */
+
+.liquor-gradient {
+    width: 100%;
+
+    height: 27px;
+
+    border-radius: 2px;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+
+    background: linear-gradient(90deg,
+            #f0b51d 0%,
+            #d8810c 25%,
+            #bd5505 48%,
+            #8e2b05 72%,
+            #741709 100%);
+
+    box-shadow:
+        inset 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   SECTION 6 - MOBILE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .choose-cup-section {
+        padding: 35px 20px;
+    }
+
+
+    .choose-cup-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .tea-profile-guide {
+        width: 100%;
+
+        min-height: auto;
+
+        padding: 25px;
+
+        border-left: none;
+        border-right: none;
+
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+
+    .tea-product {
+        justify-content: center;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .choose-cup-section {
+        padding: 30px 15px;
+    }
+
+
+    .choose-cup-heading {
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+
+    .choose-cup-number {
+        width: 36px;
+        height: 36px;
+
+        font-size: 19px;
+    }
+
+
+    .choose-cup-heading h2 {
+        font-size: 21px;
+
+        letter-spacing: 0.7px;
+    }
+
+
+    .tea-product {
+        width: 100%;
+
+        gap: 18px;
+
+        align-items: center;
+    }
+
+
+    .tea-product-image {
+        width: 110px;
+        height: 170px;
+    }
+
+
+    .tea-product-info h3 {
+        font-size: 16px;
+    }
+
+
+    .tea-type,
+    .tea-features {
+        font-size: 13px;
+    }
+
+
+    .tea-price {
+        margin-top: 12px;
+
+        font-size: 15px;
+    }
+
+
+    .tea-price strong {
+        font-size: 18px;
+    }
+
+
+    .tea-cart-btn {
+        min-width: 125px;
+
+        padding: 9px 13px;
+
+        font-size: 11px;
+    }
+
+
+    .tea-profile-guide {
+        padding: 22px 15px;
+    }
+
+
+    .strength-leaves {
+        justify-content: center;
+    }
+
+
+    .strength-leaf {
+        font-size: 25px;
+    }
+
+}
+
+/* SECTION 6 ENTRY */
+
+.choose-cup-heading {
+    opacity: 0;
+    transform: translateX(-50px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.tea-product,
+.tea-profile-guide {
+    opacity: 0;
+    transform: translateY(45px);
+
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+.choose-cup-section.show .choose-cup-heading {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.choose-cup-section.show .premium-product {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.15s;
+}
+
+
+.choose-cup-section.show .tea-profile-guide {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.3s;
+}
+
+
+.choose-cup-section.show .daily-product {
+    opacity: 1;
+    transform: translateY(0);
+
+    transition-delay: 0.45s;
+}
+
+/* ==========================================
+   SECTION 7 - PROOF OVER PROMISES
+========================================== */
+
+.proof-section {
+    width: 100%;
+    background: #f5f4f0;
+
+    padding: 38px 5% 45px;
+
+    box-sizing: border-box;
+}
+
+
+.proof-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   HEADING
+========================================== */
+
+.proof-heading {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+.proof-number {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #a5a5a0;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+
+    color: #555;
+}
+
+
+.proof-heading h2 {
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    font-family: Georgia, serif;
+
+    font-size: 26px;
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #353632;
+}
+
+
+.proof-heading h2 span {
+    width: 55px;
+    height: 1px;
+
+    background: #c8c6bd;
+
+    display: inline-block;
+}
+
+
+/* ==========================================
+   ITEMS
+========================================== */
+
+.proof-items {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    border-top: 1px solid #deddd7;
+    border-bottom: 1px solid #deddd7;
+}
+
+
+.proof-item {
+    min-height: 175px;
+
+    padding: 22px 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    text-align: center;
+
+    position: relative;
+
+    box-sizing: border-box;
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* VERTICAL LINES */
+
+.proof-item:not(:last-child)::after {
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+
+    top: 25px;
+
+    width: 1px;
+    height: calc(100% - 50px);
+
+    background: #deddd7;
+}
+
+
+/* HOVER */
+
+.proof-item:hover {
+    transform: translateY(-5px);
+
+    background: #ffffff;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+
+    z-index: 2;
+}
+
+
+/* ==========================================
+   ICON
+========================================== */
+
+.proof-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.proof-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: #777871;
+
+    stroke-width: 2.4;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
+
+    transition:
+        stroke 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.proof-item:hover .proof-icon svg {
+    stroke: #a87836;
+
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.proof-item h3 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.7px;
+
+    color: #3f403c;
+}
+
+
+/* ==========================================
+   DESCRIPTION
+========================================== */
+
+.proof-item p {
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.45;
+
+    color: #686964;
+}
+
+@media (max-width: 768px) {
+
+    .proof-section {
+        padding: 30px 18px;
+    }
+
+
+    .proof-heading {
+        align-items: flex-start;
+    }
+
+
+    .proof-number {
+        width: 40px;
+        height: 40px;
+
+        font-size: 21px;
+    }
+
+
+    .proof-heading h2 {
+        font-size: 19px;
+
+        line-height: 1.5;
+
+        flex-wrap: wrap;
+
+        gap: 8px;
+    }
+
+
+    .proof-heading h2 span {
+        display: none;
+    }
+
+
+    .proof-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .proof-item {
+        min-height: 165px;
+
+        padding: 20px 12px;
+
+        border-bottom: 1px solid #deddd7;
+    }
+
+
+    .proof-item:not(:last-child)::after {
+        display: none;
+    }
+
+
+    .proof-item:nth-child(odd) {
+        border-right: 1px solid #deddd7;
+    }
+
+
+    .proof-item:last-child {
+        grid-column: 1 / -1;
+    }
+
+
+    .proof-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+
+    .proof-item h3 {
+        font-size: 13px;
+    }
+
+
+    .proof-item p {
+        font-size: 12px;
+    }
+
+}
+
+/* ==========================================
+   SECTION 7 ENTRY ANIMATION
+========================================== */
+
+.proof-section {
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+
+/* WHEN SECTION IS VISIBLE */
+
+.proof-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================
+   PROOF ITEMS STAGGER ANIMATION
+========================================== */
+
+.proof-item {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* SHOW ITEMS */
+
+.proof-section.show .proof-item {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* DELAY EACH ITEM */
+
+.proof-section.show .proof-item:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+.proof-section.show .proof-item:nth-child(2) {
+    transition-delay: 0.30s;
+}
+
+.proof-section.show .proof-item:nth-child(3) {
+    transition-delay: 0.45s;
+}
+
+.proof-section.show .proof-item:nth-child(4) {
+    transition-delay: 0.60s;
+}
+
+.proof-section.show .proof-item:nth-child(5) {
+    transition-delay: 0.75s;
+}
+
+
+/* ==========================================
+   ICON POP ANIMATION
+========================================== */
+
+.proof-section.show .proof-icon {
+    animation: proofIconPop 0.7s ease forwards;
+}
+
+
+@keyframes proofIconPop {
+
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+}
+
+/* ==========================================
+   SECTION 8 - KNOW YOUR CUP
+========================================== */
+
+.know-cup-section {
+    width: 100%;
+    background: #f5f4f0;
+
+    padding: 28px 5% 32px;
+
+    box-sizing: border-box;
+
+    border-bottom: 1px solid #deddd7;
+}
+
+
+.know-cup-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* ==========================================
+   LEFT TITLE
+========================================== */
+
+.know-cup-title {
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+
+.know-cup-number {
+    width: 48px;
+    height: 48px;
+
+    border: 1px solid #a5a5a0;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    color: #555;
+
+    margin-bottom: 18px;
+}
+
+
+.know-cup-title h2 {
+    margin: 0;
+
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    line-height: 1.35;
+
+    font-weight: 500;
+
+    letter-spacing: 1.5px;
+
+    color: #353632;
+}
+
+
+/* ==========================================
+   DARK CARDS
+========================================== */
+
+.know-cup-card {
+    height: 200px;
+
+    background:
+        linear-gradient(135deg,
+            #173020,
+            #0e2417);
+
+    border-radius: 12px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.know-cup-card:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* ==========================================
+   SCAN CARD
+========================================== */
+
+.scan-card {
+    width: 330px;
+
+    padding: 28px;
+}
+
+
+.know-cup-card-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.know-cup-card h3 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: 21px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.8px;
+
+    color: #f1f0e8;
+}
+
+
+.know-cup-card p {
+    margin: 0 0 15px;
+
+    font-size: 15px;
+
+    line-height: 1.5;
+
+    color: #d1d5cd;
+}
+
+
+/* QR */
+
+.qr-code {
+    width: 72px;
+    height: 72px;
+
+    background: #ffffff;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* PACK */
+
+.scan-pack-image {
+    position: absolute;
+
+    right: 18px;
+    bottom: 8px;
+
+    width: 105px;
+
+    height: 140px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(0 10px 10px rgba(0, 0, 0, 0.4));
+}
+
+
+/* ==========================================
+   OR CIRCLE
+========================================== */
+
+.know-cup-or {
+    width: 50px;
+    height: 50px;
+
+    background: #f5f4f0;
+
+    border: 1px solid #d7d5ce;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-left: -48px;
+    margin-right: -48px;
+
+    z-index: 5;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    color: #666;
+}
+
+
+/* ==========================================
+   ENTER CODE CARD
+========================================== */
+
+.code-card {
+    width: 360px;
+
+    padding: 28px 35px;
+}
+
+
+.code-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.pack-code-box {
+    display: inline-flex;
+
+    align-items: center;
+
+    min-width: 205px;
+
+    height: 46px;
+
+    padding: 0 18px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(235, 235, 220, 0.4);
+
+    color: #e8e6db;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* ==========================================
+   RIGHT RHINO DECORATION
+========================================== */
+
+.know-cup-decoration {
+    width: 220px;
+    height: 220px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+
+/* RHINO IMAGE */
+
+.know-cup-rhino {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+
+    opacity: 0.6;
+}
+
+@media (max-width: 768px) {
+
+    .know-cup-section {
+        padding: 30px 18px;
+    }
+
+
+    .know-cup-container {
+        flex-direction: column;
+
+        gap: 22px;
+
+        align-items: stretch;
+    }
+
+
+    .know-cup-title {
+        width: 100%;
+
+        flex-direction: row;
+
+        align-items: center;
+
+        gap: 15px;
+    }
+
+
+    .know-cup-number {
+        margin-bottom: 0;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 21px;
+    }
+
+
+    .know-cup-title h2 {
+        font-size: 21px;
+    }
+
+
+    .scan-card,
+    .code-card {
+        width: 100%;
+
+        height: 190px;
+    }
+
+
+    .know-cup-or {
+        margin: -47px auto;
+
+        width: 46px;
+        height: 46px;
+    }
+
+
+    .code-card {
+        margin-top: 0;
+    }
+
+
+    .know-cup-decoration {
+        display: none;
+    }
+
+
+    .scan-pack-image {
+        width: 95px;
+
+        height: 150px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .know-cup-section {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .know-cup-container {
+        position: relative;
+    }
+
+    /* LEAVES DECORATION - MOBILE */
+    .know-cup-decoration {
+        display: block !important;
+
+        position: absolute !important;
+
+        width: 75px;
+        height: 75px;
+
+        right: 0;
+        bottom: 0;
+
+        z-index: 2;
+
+        pointer-events: none;
+    }
+
+    .know-cup-rhino {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain;
+
+        opacity: 0.3;
+    }
+
+}
+
+/* ==========================================
+   SECTION 8 SCROLL ANIMATION
+========================================== */
+
+/* Initial section animation */
+
+.know-cup-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+/* When section enters screen */
+
+.know-cup-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* LEFT HEADING */
+
+.know-cup-section .know-cup-title,
+.know-cup-section .know-cup-heading,
+.know-cup-section h2 {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.know-cup-section.show .know-cup-title,
+.know-cup-section.show .know-cup-heading,
+.know-cup-section.show h2 {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* LEFT / SCAN CARD */
+
+.know-cup-section .scan-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease 0.2s,
+        transform 0.8s ease 0.2s;
+}
+
+.know-cup-section.show .scan-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* OR CIRCLE */
+
+.know-cup-section .or-circle {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: opacity 0.6s ease 0.5s,
+        transform 0.6s ease 0.5s;
+}
+
+.know-cup-section.show .or-circle {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* RIGHT / CODE CARD */
+
+.know-cup-section .code-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease 0.4s,
+        transform 0.8s ease 0.4s;
+}
+
+.know-cup-section.show .code-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* FLOWER / BOTANICAL IMAGE */
+
+.know-cup-section .flower,
+.know-cup-section .botanical-flower,
+.know-cup-section .flower-decoration {
+    opacity: 0;
+    transform: translateX(50px) rotate(8deg);
+    transition: opacity 1s ease 0.6s,
+        transform 1s ease 0.6s;
+}
+
+.know-cup-section.show .flower,
+.know-cup-section.show .botanical-flower,
+.know-cup-section.show .flower-decoration {
+    opacity: 1;
+    transform: translateX(0) rotate(0deg);
+}
+/* ==========================================
+   RIGHT RHINO IMAGE ANIMATION
+========================================== */
+
+.know-cup-section .know-cup-rhino {
+    opacity: 0;
+    transform: translateX(60px) scale(0.8);
+    transition:
+        opacity 1s ease 0.6s,
+        transform 1s ease 0.6s;
+}
+
+.know-cup-section.show .know-cup-rhino {
+    opacity: 1;
+    transform: translateX(0) scale(1);
 }
