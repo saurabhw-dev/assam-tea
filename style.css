@@ -5013,3 +5013,452 @@ body {
     opacity: 1;
     transform: translateX(0) scale(1);
 }
+
+/* ==========================================
+   SECTION 9 - TEA PREPARATION
+========================================== */
+
+.tea-steps-section {
+    width: 100%;
+    background: #f5f4f0;
+
+    padding: 45px 5% 55px;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.tea-steps-container {
+    width: 100%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+
+/* ==========================================
+   SECTION NUMBER
+========================================== */
+
+.tea-steps-number {
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid #9b9b9b;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    font-family: Georgia, serif;
+    font-size: 26px;
+
+    color: #4d504b;
+
+    background: #f5f4f0;
+}
+
+
+/* ==========================================
+   STEPS
+========================================== */
+
+.tea-steps-wrapper {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    min-width: 0;
+}
+
+
+/* ==========================================
+   CARD
+========================================== */
+
+.tea-step-card {
+    position: relative;
+
+    flex: 1;
+
+    height: 165px;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #1b1b16;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+
+.tea-step-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.20);
+}
+
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+.tea-step-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease;
+}
+
+
+.tea-step-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.tea-step-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.72) 0%,
+            rgba(0, 0, 0, 0.48) 45%,
+            rgba(0, 0, 0, 0.08) 100%
+        );
+
+    z-index: 1;
+}
+
+
+/* ==========================================
+   TEXT
+========================================== */
+
+.tea-step-overlay {
+    position: absolute;
+
+    left: 28px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    z-index: 2;
+
+    color: #ffffff;
+}
+
+
+.tea-step-overlay h3 {
+    margin: 0 0 10px;
+
+    font-family: Georgia, serif;
+
+    font-size: 23px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    color: #ffffff;
+}
+
+
+.tea-step-overlay p {
+    margin: 0;
+
+    font-size: 14px;
+
+    line-height: 1.55;
+
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, 0.92);
+}
+
+
+/* ==========================================
+   ARROW
+========================================== */
+
+.tea-step-arrow {
+    width: 25px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 32px;
+
+    font-weight: 300;
+
+    color: #b57b3f;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.tea-step-arrow:hover {
+    transform: translateX(5px);
+
+    color: #8f5924;
+}
+
+@media (max-width: 768px) {
+
+    .tea-steps-section {
+        padding: 30px 18px 40px;
+    }
+
+
+    .tea-steps-container {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 22px;
+    }
+
+
+    /* NUMBER */
+
+    .tea-steps-number {
+        width: 44px;
+        height: 44px;
+
+        font-size: 22px;
+    }
+
+
+    /* STEPS */
+
+    .tea-steps-wrapper {
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    /* CARD */
+
+    .tea-step-card {
+        width: 100%;
+
+        flex: none;
+
+        height: 175px;
+
+        border-radius: 10px;
+    }
+
+
+    /* ARROW */
+
+    .tea-step-arrow {
+        height: 28px;
+
+        transform: rotate(90deg);
+
+        font-size: 28px;
+    }
+
+
+    .tea-step-arrow:hover {
+        transform: rotate(90deg) translateX(4px);
+    }
+
+
+    /* TEXT */
+
+    .tea-step-overlay {
+        left: 22px;
+    }
+
+
+    .tea-step-overlay h3 {
+        font-size: 21px;
+    }
+
+
+    .tea-step-overlay p {
+        font-size: 13px;
+    }
+
+}
+
+/* ==========================================
+   SECTION 9 ANIMATION
+========================================== */
+
+/* SECTION */
+
+.tea-steps-section {
+    opacity: 0;
+    transform: translateY(60px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.tea-steps-section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* SECTION NUMBER */
+
+.tea-steps-number {
+    opacity: 0;
+    transform: scale(0.5);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+.tea-steps-section.show .tea-steps-number {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ==========================================
+   CARDS INITIAL STATE
+========================================== */
+
+.tea-step-card {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+
+/* FIRST CARD */
+
+.tea-steps-section.show .tea-step-card:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+
+/* SECOND CARD
+
+   HTML children:
+   1 = card
+   2 = arrow
+   3 = card
+*/
+
+.tea-steps-section.show .tea-step-card:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.55s;
+}
+
+
+/* THIRD / POUR CARD
+
+   HTML children:
+   1 = card
+   2 = arrow
+   3 = card
+   4 = arrow
+   5 = card
+*/
+
+.tea-steps-section.show .tea-step-card:nth-child(5) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.9s;
+}
+
+
+/* ==========================================
+   ARROWS
+========================================== */
+
+.tea-step-arrow {
+    opacity: 0;
+    transform: translateX(-15px);
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+
+
+/* FIRST ARROW */
+
+.tea-steps-section.show .tea-step-arrow:nth-child(2) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.45s;
+}
+
+
+/* SECOND ARROW */
+
+.tea-steps-section.show .tea-step-arrow:nth-child(4) {
+    opacity: 1;
+    transform: translateX(0);
+    transition-delay: 0.8s;
+}
+
+
+/* ==========================================
+   IMAGE ZOOM EFFECT
+========================================== */
+
+.tea-step-card img {
+    transition: transform 0.8s ease;
+}
+
+.tea-steps-section.show .tea-step-card:hover img {
+    transform: scale(1.08);
+}
