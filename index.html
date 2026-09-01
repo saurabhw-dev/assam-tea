@@ -1071,7 +1071,7 @@
 
             <div class="know-cup-decoration">
 
-                <img src="images/section_8_leaves" alt="Rhino Decoration" class="know-cup-rhino">
+                <img src="images/section_8_leaves.png" alt="Rhino Decoration" class="know-cup-rhino">
 
             </div>
 
@@ -1181,6 +1181,207 @@
 
     </section>
 
+    <!-- ==========================================
+     SECTION 10 + 11 + 12
+========================================== -->
+
+    <section class="cup-info-section">
+
+        <div class="cup-info-container">
+
+
+            <!-- ==========================================
+             SECTION 10 - WHY CUP BY CUP
+        ========================================== -->
+
+            <div class="why-cup-card">
+
+                <div class="why-cup-bg"></div>
+
+                <div class="why-cup-number">
+                    10
+                </div>
+
+                <div class="why-cup-content">
+
+                    <h2>WHY CUP BY CUP</h2>
+
+                    <p>
+                        Born in Assam.<br>
+                        Made with care.<br>
+                        Verified for you.<br>
+                        Made for your cup.<br>
+                        From Assam to your cup.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+             SECTION 11 - THE ASSAM PAIR
+        ========================================== -->
+
+            <div class="assam-pair-card">
+
+                <div class="assam-pair-number">
+                    11
+                </div>
+
+
+                <div class="assam-pair-content">
+
+                    <div class="assam-pair-text">
+
+                        <h2>THE ASSAM PAIR</h2>
+
+                        <p>
+                            Two profiles.<br>
+                            Every mood.
+                        </p>
+
+                        <div class="pair-price">
+                            ₹449
+                        </div>
+
+                        <button class="pair-button">
+                            SHOP THE PAIR
+                        </button>
+
+                    </div>
+
+
+                    <!-- PACK IMAGE -->
+
+                    <div class="assam-pair-image">
+
+                        <img src="images/Section_11_img.png" alt="Assam Tea Pair">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================================
+             SECTION 12 - FAQ
+        ========================================== -->
+
+            <div class="faq-card">
+
+                <div class="faq-header">
+
+                    <div class="faq-number">
+                        12
+                    </div>
+
+                    <h2>FAQ</h2>
+
+                </div>
+
+
+                <div class="faq-list">
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+
+                            <span>
+                                Where is this tea from?
+                            </span>
+
+                            <span class="faq-arrow">
+                                &#10095;
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Our tea is sourced directly from Assam.
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+
+                            <span>
+                                What makes Cup by Cup different?
+                            </span>
+
+                            <span class="faq-arrow">
+                                &#10095;
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Carefully selected Assam tea, made for every cup.
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+
+                            <span>
+                                How do I verify my pack?
+                            </span>
+
+                            <span class="faq-arrow">
+                                &#10095;
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Scan the QR code or enter your pack code.
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="faq-item">
+
+                        <button class="faq-question">
+
+                            <span>
+                                How should I store my tea?
+                            </span>
+
+                            <span class="faq-arrow">
+                                &#10095;
+                            </span>
+
+                        </button>
+
+                        <div class="faq-answer">
+                            Store your tea in a cool and dry place.
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
 
 
 
@@ -1191,7 +1392,7 @@
         /* SELECT BOTH SECTIONS */
 
         const sections = document.querySelectorAll(
-            '.hero-section, .born-assam-section, .follow-leaf-section, .people-section, .assam-reached-section, .cup-moments-section, .choose-cup-section, .proof-section, .know-cup-section, .tea-steps-section'
+            '.hero-section, .born-assam-section, .follow-leaf-section, .people-section, .assam-reached-section, .cup-moments-section, .choose-cup-section, .proof-section, .know-cup-section, .tea-steps-section, .cup-info-section'
         );
 
 
@@ -1273,6 +1474,28 @@
             });
 
         });
+    </script>
+
+    <script>
+
+        const faqQuestions =
+            document.querySelectorAll('.faq-question');
+
+
+        faqQuestions.forEach((question) => {
+
+            question.addEventListener('click', () => {
+
+                const faqItem =
+                    question.parentElement;
+
+
+                faqItem.classList.toggle('active');
+
+            });
+
+        });
+
     </script>
 
 
