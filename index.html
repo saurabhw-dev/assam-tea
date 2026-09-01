@@ -535,6 +535,132 @@
 
     </section>
 
+    <section class="cup-moments-section">
+
+        <div class="cup-moments-container">
+
+            <div class="cup-moments-heading">
+
+                <span class="section-number">5</span>
+
+                <h2>FROM ONE LAND TO MILLIONS OF INDIAN CUPS</h2>
+
+            </div>
+
+
+            <div class="cup-moments-content">
+
+                <!-- LEFT ARROW -->
+                <button class="moment-arrow moment-arrow-left" id="prevMoment">
+                    &#10094;
+                </button>
+
+
+                <!-- SLIDER -->
+                <div class="moment-slider">
+
+                    <div class="moment-cards" id="momentCards">
+
+                        <!-- CARD 1 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_1_family_breakfast.png">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Family</span>
+                                <span>breakfasts</span>
+                            </div>
+                        </div>
+
+
+                        <!-- CARD 2 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_2_office_tea_break.png">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Office</span>
+                                <span>tea breaks</span>
+                            </div>
+                        </div>
+
+
+                        <!-- CARD 3 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_3_peaceful_morning.png">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Peaceful</span>
+                                <span>mornings</span>
+                            </div>
+                        </div>
+
+
+                        <!-- CARD 4 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_4_guests_at_home.png">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Guests</span>
+                                <span>at home</span>
+                            </div>
+                        </div>
+
+
+                        <!-- ADD NEW CARDS HERE -->
+                        <!-- They will NOT go to a new row -->
+
+                        
+
+
+                        <!-- CARD 5 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_5_evening_tea_time.png" alt="Evening Tea">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Evening</span>
+                                <span>tea time</span>
+                            </div>
+                        </div>
+
+
+                        <!-- CARD 6 -->
+                        <div class="moment-card">
+                            <div class="moment-image">
+                                <img src="images/section_5_image_6_tea_with_friends.png" alt="Friends Tea">
+                            </div>
+
+                            <div class="moment-text">
+                                <span>Friends</span>
+                                <span>tea moments</span>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- RIGHT ARROW -->
+                <button class="moment-arrow moment-arrow-right" id="nextMoment">
+                    &#10095;
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
 
 
 
@@ -546,8 +672,8 @@
         /* SELECT BOTH SECTIONS */
 
         const sections = document.querySelectorAll(
-    '.hero-section, .born-assam-section, .follow-leaf-section, .people-section, .assam-reached-section'
-);
+            '.hero-section, .born-assam-section, .follow-leaf-section, .people-section, .assam-reached-section, .cup-moments-section'
+        );
 
 
         /* INTERSECTION OBSERVER */
@@ -582,6 +708,53 @@
         });
 
     </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const slider = document.querySelector(".moment-slider");
+    const prevButton = document.getElementById("prevMoment");
+    const nextButton = document.getElementById("nextMoment");
+
+    if (!slider || !prevButton || !nextButton) {
+        return;
+    }
+
+    // RIGHT ARROW
+    nextButton.addEventListener("click", function () {
+
+        const card = document.querySelector(".moment-card");
+
+        if (!card) return;
+
+        const cardWidth = card.offsetWidth + 18;
+
+        slider.scrollBy({
+            left: cardWidth,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    // LEFT ARROW
+    prevButton.addEventListener("click", function () {
+
+        const card = document.querySelector(".moment-card");
+
+        if (!card) return;
+
+        const cardWidth = card.offsetWidth + 18;
+
+        slider.scrollBy({
+            left: -cardWidth,
+            behavior: "smooth"
+        });
+
+    });
+
+});
+</script>
 
 
 </body>
